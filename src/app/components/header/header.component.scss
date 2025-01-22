@@ -1,0 +1,12 @@
+.header__mobile-menu {
+  animation: slideFromLeft 0.4s linear;
+}
+
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-400px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}

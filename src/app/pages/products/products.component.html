@@ -1,0 +1,14 @@
+<div class="products py-10 px-5 lg:px-32">
+  <div
+    class="products__title integral font-semibold text-3xl lg:text-5xl uppercase pb-10"
+  >
+    All Products
+  </div>
+  <div
+    class="products__wrapper grid lg:grid-cols-4 gap-5 md:grid-cols-2 grid-cols-1"
+  >
+    @for (product of allProducts; track product.id) {
+    <app-product-card [productData]="product"></app-product-card>
+    }
+  </div>
+</div>

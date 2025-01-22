@@ -1,0 +1,73 @@
+<div class="single-product p-5 lg:px-32" *ngIf="product">
+  <div
+    class="single-product__product-container flex flex-col gap-4 lg:gap-8 lg:flex-row"
+  >
+    <div
+      class="single-product__product-container---image bg-[#F0EEED] py-8 flex items-center justify-center rounded-3xl lg:w-[35%] w-full"
+    >
+      <img
+        class="lg:h-[500px] h-60"
+        [src]="product.image"
+        [alt]="product.title"
+      />
+    </div>
+    <div class="single-product__product-container---content lg:w-[65%] w-full">
+      <div
+        class="single-product__product-container---product-title integral font-black text-2xl lg:text-5xl"
+      >
+        {{ product.title }}
+      </div>
+      <div
+        class="single-product__product-container---product-price text-3xl font-bold mt-5 pb-5"
+      >
+        ${{ product.price }}
+      </div>
+      <div
+        class="single-product__product-container---product-description text-[rgba(0,0,0,0.6)]"
+      >
+        {{ product.description }}
+      </div>
+      <hr class="my-5" />
+      <div
+        class="single-product__product-container---product-actions flex items-center gap-5"
+      >
+        <div
+          class="single-product__product-container---product-quantity bg-[#F0EEED] py-4 px-8 rounded-full flex items-center gap-4"
+        >
+          <div
+            class="single-product__product-container---product-quantity---input flex items-center gap-4"
+          >
+            <button
+              class="bg-[#F0EEED] rounded-full"
+              (click)="decrementQuantity()"
+            >
+              <img src="assets/icons/minus.svg" alt="" />
+            </button>
+            <input
+              class="text-center outline-none w-16 bg-transparent"
+              type="text"
+              [(ngModel)]="quantity"
+              readonly
+            />
+            <button
+              class="bg-[#F0EEED] rounded-full"
+              (click)="incrementQuantity()"
+            >
+              <img src="assets/icons/plus.svg" alt="" />
+            </button>
+          </div>
+        </div>
+        <div
+          class="single-product__product-container---product-cart-btn flex-1 lg:flex-initial"
+        >
+          <button
+            class="bg-black rounded-full py-4 px-16 text-white w-[100%]"
+            (click)="addToCart(product, this.quantity)"
+          >
+            Add To Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<div
+  class="cart-products border rounded-xl p-5 flex flex-col gap-7 justify-stretch items-stretch"
+  *ngIf="this.productsLength > 0"
+>
+  @for(cartItem of cartItems; track cartItem.id) {
+  <div class="cart-product flex gap-5 w-full">
+    <div
+      class="cart-product__image bg-[#F0EEED] p-4 flex items-center justify-center rounded-3xl"
+    >
+      <img [src]="cartItem.image" [alt]="cartItem.title" class="w-36 h-36" />
+    </div>
+    <div class="cart-product__content flex-1">
+      <div class="cart-product__content---title font-bold text-xl">
+        {{ cartItem.title }}
+      </div>
+      <div class="cart-product__content---price font-bold text-2xl pt-2">
+        ${{ cartItem.price * cartItem.quantity }}
+      </div>
+    </div>
+    <div class="cart-product__actions flex flex-col justify-between items-end">
+      <div class="cart-product__actions---remove-btn">
+        <img
+          class="cursor-pointer"
+          src="assets/icons/trash.svg"
+          alt="Trash"
+          (click)="removeFromCart(cartItem)"
+        />
+      </div>
+      <div
+        class="cart-product__actions---quantity bg-[#F0EEED] p-4 rounded-full flex items-center gap-4"
+      >
+        <div
+          class="cart-product__actions---quantity---input flex items-center gap-4"
+        >
+          <button
+            class="bg-[#F0EEED] rounded-full"
+            (click)="decrementQuantity(cartItem)"
+          >
+            <img src="assets/icons/minus.svg" alt="" />
+          </button>
+          <input
+            class="text-center outline-none w-16 bg-transparent"
+            type="text"
+            [(ngModel)]="cartItem.quantity"
+            readonly
+          />
+          <button
+            class="bg-[#F0EEED] rounded-full"
+            (click)="incrementQuantity(cartItem)"
+          >
+            <img src="assets/icons/plus.svg" alt="" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+  }
+</div>

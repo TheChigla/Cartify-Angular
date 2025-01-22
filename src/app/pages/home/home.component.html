@@ -1,0 +1,15 @@
+<app-hero></app-hero>
+<app-partners></app-partners>
+<section id="newarrivals">
+  <app-products
+    title="New Arrivals"
+    [products]="splittedFirstFour"
+  ></app-products>
+</section>
+<hr class="max-w-[calc(100%-40px)] lg:max-w-[calc(100%-256px)] m-auto" />
+<section id="topselling">
+  <app-products
+    title="Top Selling"
+    [products]="splittedLastFour"
+  ></app-products>
+</section>

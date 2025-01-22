@@ -1,0 +1,72 @@
+<div class="admin px-5 lg:px-32 py-10">
+  <div class="admin__add-product">
+    <div class="admin-add-products">
+      <div
+        class="admin-add-products__title integral font-semibold text-3xl lg:text-5xl uppercase pb-5 lg:pb-10"
+      >
+        Add Product
+      </div>
+      <form [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
+        <div class="admin-add-products__form flex flex-col gap-3">
+          <div class="admin-add-products__form__input">
+            <label for="name" class="text-[rgba(0,0,0,.6)]">Title</label>
+            <br />
+            <input
+              type="text"
+              id="name"
+              formControlName="title"
+              placeholder="Title"
+              required="required"
+              class="w-full border border-[rgba(0,0,0,.2)] rounded-md p-2"
+            />
+          </div>
+          <div class="admin-add-products__form__input">
+            <label for="price" class="text-[rgba(0,0,0,.6)]">Price</label>
+            <br />
+            <input
+              type="number"
+              id="price"
+              formControlName="price"
+              placeholder="Price"
+              required="required"
+              class="w-full border border-[rgba(0,0,0,.2)] rounded-md p-2"
+            />
+          </div>
+          <div class="admin-add-products__form__input">
+            <label for="image" class="text-[rgba(0,0,0,.6)]">Image URL</label>
+            <br />
+            <input
+              type="text"
+              id="image"
+              formControlName="imageUrl"
+              required="required"
+              class="w-full border border-[rgba(0,0,0,.2)] rounded-md p-2"
+            />
+          </div>
+          <div class="admin-add-products__form__input">
+            <label for="description" class="text-[rgba(0,0,0,.6)]"
+              >Description</label
+            >
+            <br />
+            <textarea
+              id="description"
+              formControlName="description"
+              required="required"
+              class="w-full border border-[rgba(0,0,0,.2)] rounded-md p-2"
+            ></textarea>
+          </div>
+
+          <div class="admin-add-products__form__submit">
+            <button
+              (click)="onSubmit()"
+              type="submit"
+              class="bg-[#000] text-white rounded-md py-2 px-5"
+            >
+              Add Product
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

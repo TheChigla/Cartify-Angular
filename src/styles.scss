@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("assets/fonts/satoshi/Satoshi-Variable.ttf");
+}
+
+@font-face {
+  font-family: "Integral";
+  src: url("assets/fonts/integral/Fontspring-DEMO-integralcf-regular.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Integral";
+  src: url("assets/fonts/integral/Fontspring-DEMO-integralcf-medium.otf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Integral";
+  src: url("assets/fonts/integral/Fontspring-DEMO-integralcf-heavy.otf");
+  font-weight: 900;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: "Satoshi";
+  margin: 0;
+  padding: 0;
+}
+
+.satoshi {
+  font-family: "Satoshi";
+}
+
+.integral {
+  font-family: "Integral";
+}
