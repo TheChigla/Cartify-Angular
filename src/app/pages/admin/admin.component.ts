@@ -20,7 +20,7 @@ export class AdminComponent {
     this.addProductForm = this.fb.group({
       title: ['', Validators.required],
       price: [0, Validators.required],
-      imageUrl: ['', Validators.required],
+      image: ['', Validators.required],
       description: ['', Validators.required],
     });
   }
